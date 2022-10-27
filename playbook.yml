@@ -4,6 +4,8 @@
   remote_user: root
 
   tasks:
-  - name: Call roles
-    roles:
-      - motd
+  - name: Upgrade all packages, excluding kernel & foo related packages
+    ansible.builtin.yum:
+      name: '*'
+      state: latest
+      exclude: kernel*
