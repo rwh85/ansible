@@ -1,7 +1,8 @@
 ---
-- name: Update web servers
+- name: Test Playbok
   hosts: 192.168.10.62
   remote_user: root
+  gather_facts: False
 
   tasks:
   - name: Upgrade all packages, excluding kernel & foo related packages
